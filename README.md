@@ -62,3 +62,19 @@ Example:  npx playwright test HomePageTest.spec.js --project=chromium
 3) npx playwright test Mytest.spec.js --project=chromium ---> runs on specific browser
 4) npx playwright test MyTest.spec.js --project=chromium --headed ---> runs on specific browser and headed mode
 5) npx playwright test Mytest.spec.js --project=chromium --headed --debug ---> runs on specific browser, headed mode and dubuger on
+
+Locate single element:
+
+Link/button
+1) await page.locator('locator').click()
+2) await page.click('locator');
+
+inputbox
+1) await page.locator('locator').fill('value')
+2) await page.locator('locator').type('value')
+
+1) await page.fill('locator', 'value')
+2) await page.type('locator', 'value')
+
+Locate multiple web elements:
+1) const elements = await page.$$(locator)
